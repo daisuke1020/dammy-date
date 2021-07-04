@@ -1,0 +1,42 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(0)
+arr = np.random.multivariate_normal((-3,0),((1.0,0.8),(0.8,1.0)),500)
+arr_0 = np.insert(arr,2,0,axis=1)
+arr2 = np.random.multivariate_normal((0,-3),((1.0,0.8),(0.8,1.0)),500)
+arr2_1 = np.insert(arr2,2,1,axis=1)
+#print(arr_0)
+#print(arr2_1)
+
+arr0_0 = np.vstack([arr_0,arr2_1])
+print(arr0_0.shape)
+print(arr0_0)
+
+#print(arr)
+'''
+%matplotlib inline
+plt.xlabel("x1")
+plt.ylabel("y")
+plt.title("dummy of x1")
+plt.xlim(-5.5,2.5)
+plt.ylim(0,30)
+plt.hist(arr[:,0],bins = 100)
+plt.show()
+
+plt.xlabel("x2")
+plt.ylabel("y")
+plt.title("dummy of x2")
+plt.xlim(-5.5,2.5)
+plt.ylim(0,30)
+plt.hist(arr[:,1],bins = 100)
+plt.show()
+
+plt.xlabel("x1")
+plt.ylabel("x2")
+plt.title("dummy")
+plt.scatter(arr[:,0],arr[:,1],label="0")
+plt.scatter(arr2[:,0],arr2[:,1],label="1")
+plt.legend()
+plt.show()
+'''
